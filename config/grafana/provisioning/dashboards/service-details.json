@@ -1258,7 +1258,7 @@
       "targets": [
         {
           "editorMode": "code",
-          "expr": "avg(jvm_thread_count{job=~\"$service\", jvm_thread_daemon=\"false\"}) by (jvm_thread_state)",
+          "expr": "avg(jvm_thread_count{job=~\"$service\", jvm_thread_daemon=\"false\", jvm_thread_state!=\"\" }) by (jvm_thread_state)",
           "legendFormat": "{{jvm_thread_state}}",
           "range": true,
           "refId": "A"
@@ -1350,7 +1350,7 @@
       "targets": [
         {
           "editorMode": "code",
-          "expr": "avg(jvm_thread_count{job=~\"$service\", jvm_thread_daemon=\"true\"}) by (jvm_thread_state)",
+          "expr": "avg(jvm_thread_count{job=~\"$service\", jvm_thread_daemon=\"true\", jvm_thread_state!=\"\"}) by (jvm_thread_state)",
           "legendFormat": "{{jvm_thread_state}}",
           "range": true,
           "refId": "A"
